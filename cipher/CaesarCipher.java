@@ -15,12 +15,11 @@ public class CaesarCipher {
     // create "encode" and "decode" strings to check for equality in command line arguments.
     String param1Enc = new String("encode");
     String param1Dec = new String("decode");
-
-    PrintWriter pen = new PrintWriter(System.out, true);
-
+   
     // Depending on user input, encode, decode, or print appropriate error message.
-    if (args.length < 2) {
-      pen.println("The program expects two parameters. 1st: encode or decode, 2nd: string");
+    if (args.length != 2) {
+        System.err.println("Incorrect number of parameters");
+        System.exit(2);
     }
 
     else if (param1Enc.equals(args[0])) {
@@ -35,9 +34,9 @@ public class CaesarCipher {
     }
 
     else {
-      pen.println("Valid options for the first parameter are 'encode' and 'decode'.");
-    }
-
+      System.err.println("Valid options for the first parameter are 'encode' and 'decode'.");
+      System.exit(1);
+    }   
   }// main
 
   // this method encrypts a string with shift value n.
