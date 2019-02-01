@@ -1,8 +1,14 @@
 import java.io.PrintWriter;
 
 public class VigenereCipher {
-
-    //call type: java vigenere encode/decode string key
+    
+    /*
+    This program encrypts or decrypts a given string using a key. This cipher style is called the Vigenere Cipher.
+    This program takes three command line arguments: param0, param1, param2.
+    param0: instruction - 'encode' or 'decode'
+    param1: String to be encrypted/decrypted
+    param2: String to be used as the key.
+    */
     public static void main (String[] args) {
 
         //create encode and decode strings to check for equality in command line arguments
@@ -18,7 +24,14 @@ public class VigenereCipher {
         }
     } //main
 
-    //this method encodes a string using a key (cipher type = Vigenere)
+    /*
+    *This method encrypts plaintext, a String, using key, also a String. This cipher style is Vigenere Cipher.
+    *
+    * @paramleft
+    *   The String to be encrypted
+    * @paramright
+    *   The String to be used as the key.
+    */
     public static void encode (String plaintext, String key) {
 
         //Create a string the same length as original string, containing repetitions of the key.
@@ -41,8 +54,7 @@ public class VigenereCipher {
         for (int i = 0; i < plaintext.length(); i++){
 
             encoded[i] = (char) (((((int)cyclic[i] - 97) +
-                                   ((int)plaintext.charAt(i) - 97)) % 26) + 97);
-           
+                                   ((int)plaintext.charAt(i) - 97)) % 26) + 97); 
         }
 
         //create new string which is the encrypted string.
@@ -54,7 +66,14 @@ public class VigenereCipher {
         
     }//encode
 
-    //this method decodes a string using a key. (cipher type = Vigenere)
+    /*
+    *This method decrypts ciphertext, a String, using key, also a String. This cipher style is Vigenere Cipher.
+    *
+    * @paramleft
+    *   The String to be decrypted
+    * @paramright
+    *   The String to be used as the key.
+    */
     public static void decode (String ciphertext, String key) {
 
         //Create a string the same length as original string, containing repetitions of the key.
