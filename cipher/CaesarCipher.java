@@ -1,3 +1,4 @@
+package cipher;
 import java.io.PrintWriter;
 
 public class CaesarCipher {
@@ -5,8 +6,8 @@ public class CaesarCipher {
     public static void main (String[] args) {
 
         //create "encode" and "decode" strings to check for equality in command line arguments.
-        String param1enc = new String("encode");
-        String param1dec = new String("decode");
+        String param1Enc = new String("encode");
+        String param1Dec = new String("decode");
 
         PrintWriter pen = new PrintWriter(System.out, true);
 
@@ -15,13 +16,13 @@ public class CaesarCipher {
             pen.println("The program expects two parameters. 1st: encode or decode, 2nd: string");
         }   
         
-        else if (param1enc.equals(args[0])) {
+        else if (param1Enc.equals(args[0])) {
             for (int n = 0; n < 26; n++) {
                 encode(args[1], n);
             }
         }
 
-        else if (param1dec.equals(args[0])) {
+        else if (param1Dec.equals(args[0])) {
             for (int n = 0; n < 26; n++)
                 decode(args[1], n);
         }
