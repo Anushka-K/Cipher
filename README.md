@@ -6,6 +6,6 @@ The program consists of two classical ciphers, Ceaser Cipher and Vignere
 Cipher, implemented in Java.
 
 Resources used: Readings for CSC207 about Git and Eclipse basics, and about
-the syntax of basic Java commands.
+the syntax of basic Java commands, and StackOverflow for more information on typecasting https://stackoverflow.com/questions/10776806/typecasting-in-java
 
 
